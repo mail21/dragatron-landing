@@ -11,7 +11,7 @@ function Card({ title, price, listStatus, isPopular }) {
   ];
 
   return (
-    <div className="card">
+    <div className="card" data-testid="card">
       {isPopular ? <div className="popular">POPULAR.</div> : ''}
       <div className="card__body">
         <h3 className="text-main">{title}</h3>
@@ -24,7 +24,11 @@ function Card({ title, price, listStatus, isPopular }) {
               }
               return <li>{item}</li>;
             } else {
-              return <li className="greyed">{item}</li>;
+              return (
+                <li key={index} className="greyed">
+                  {item}
+                </li>
+              );
             }
           })}
         </ul>

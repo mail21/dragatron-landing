@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('should renders description', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Dragatron.')).toBeInTheDocument();
+  expect(screen.getByText('SIGN UP AS A')).toBeInTheDocument();
+  expect(screen.getByText('STEP 3/4')).toBeInTheDocument();
+  expect(screen.getByText('With 3 Types of memberships,')).toBeInTheDocument();
 });
